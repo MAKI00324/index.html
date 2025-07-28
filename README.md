@@ -11,78 +11,97 @@
             box-sizing: border-box;
         }
         
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
         body {
             font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'Meiryo', sans-serif;
             background: linear-gradient(135deg, #ff9a56 0%, #ff6b35 50%, #f7931e 100%);
             min-height: 100vh;
-            padding: 8px;
+            padding: 4px;
             line-height: 1.6;
             margin: 0;
+            width: 100%;
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 450px;
+            max-width: calc(100vw - 8px);
+            width: 100%;
             margin: 0 auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             overflow: hidden;
         }
         
         .header {
             background: linear-gradient(135deg, #ff9a56, #ff6b35);
             color: white;
-            padding: 16px;
+            padding: 12px;
             text-align: center;
+            width: 100%;
         }
         
         .header h1 {
-            font-size: clamp(17px, 4.5vw, 22px);
-            margin-bottom: 6px;
+            font-size: 18px;
+            margin-bottom: 4px;
             font-weight: 700;
+            word-break: keep-all;
         }
         
         .header p {
-            font-size: clamp(11px, 3vw, 13px);
+            font-size: 12px;
             opacity: 0.95;
+            word-break: keep-all;
         }
         
         .content {
-            padding: 16px;
+            padding: 12px;
+            width: 100%;
+            overflow-x: hidden;
         }
         
         .question-container {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            width: 100%;
         }
         
         .question {
-            font-size: clamp(15px, 4vw, 17px);
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #333;
-            line-height: 1.4;
+            line-height: 1.3;
+            word-break: keep-all;
+            overflow-wrap: break-word;
         }
         
         .options {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
+            width: 100%;
         }
         
         .option {
-            padding: 12px 14px;
+            padding: 10px;
             border: 2px solid #e8e8e8;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
             background: #fafafa;
-            font-size: clamp(13px, 3.5vw, 15px);
-            line-height: 1.3;
+            font-size: 13px;
+            line-height: 1.2;
             word-break: keep-all;
             overflow-wrap: break-word;
-            min-height: 48px;
+            min-height: 44px;
             display: flex;
             align-items: center;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .option:hover {
@@ -202,10 +221,10 @@
         
         .progress-bar {
             width: 100%;
-            height: 6px;
+            height: 4px;
             background: #e8e8e8;
-            border-radius: 3px;
-            margin-bottom: 20px;
+            border-radius: 2px;
+            margin-bottom: 15px;
             overflow: hidden;
         }
         
@@ -293,84 +312,13 @@
         /* スマホ対応の追加調整 */
         @media (max-width: 480px) {
             body {
-                padding: 4px;
-            }
-            
-            .container {
-                border-radius: 10px;
-                max-width: 100%;
-                margin: 0;
-            }
-            
-            .content {
-                padding: 12px;
-            }
-            
-            .header {
-                padding: 12px;
-            }
-            
-            .option {
-                padding: 10px 12px;
-                font-size: 14px;
-                min-height: 44px;
-            }
-            
-            .question {
-                font-size: 15px;
-                margin-bottom: 10px;
-            }
-            
-            .illustration {
-                width: 70px;
-                height: 70px;
-                margin: 10px auto;
-            }
-            
-            .metabolic-icon, .water-icon, .appetite-icon, .sleep-icon, .hormone-icon {
-                font-size: 24px;
-            }
-            
-            .result-type {
-                font-size: 20px;
-                padding: 12px;
-                margin-bottom: 12px;
-            }
-            
-            .habits-list {
-                margin: 15px 0;
-            }
-            
-            .habits-list h3 {
-                font-size: 16px;
-                margin-bottom: 8px;
-            }
-            
-            .habits-list li {
-                padding: 8px 0;
-                font-size: 13px;
-            }
-            
-            .exercise-box {
-                padding: 12px;
-                font-size: 13px;
-            }
-            
-            .advice-box {
-                padding: 12px;
-                font-size: 13px;
-                margin-top: 15px;
-            }
-        }
-        
-        /* 極小画面対応 */
-        @media (max-width: 360px) {
-            body {
                 padding: 2px;
             }
             
             .container {
-                border-radius: 8px;
+                max-width: calc(100vw - 4px);
+                border-radius: 6px;
+                margin: 0;
             }
             
             .content {
@@ -389,18 +337,98 @@
                 font-size: 11px;
             }
             
-            .question {
-                font-size: 14px;
-            }
-            
             .option {
-                padding: 8px 10px;
-                font-size: 13px;
+                padding: 8px;
+                font-size: 12px;
                 min-height: 40px;
             }
             
+            .question {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            
+            .illustration {
+                width: 60px;
+                height: 60px;
+                margin: 8px auto;
+            }
+            
+            .metabolic-icon, .water-icon, .appetite-icon, .sleep-icon, .hormone-icon {
+                font-size: 20px;
+            }
+            
+            .result-type {
+                font-size: 18px;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            
+            .habits-list {
+                margin: 12px 0;
+            }
+            
+            .habits-list h3 {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            
+            .habits-list li {
+                padding: 6px 0;
+                font-size: 12px;
+            }
+            
+            .exercise-box {
+                padding: 10px;
+                font-size: 12px;
+            }
+            
+            .advice-box {
+                padding: 10px;
+                font-size: 12px;
+                margin-top: 12px;
+            }
+        }
+        
+        /* 極小画面対応 */
+        @media (max-width: 360px) {
+            body {
+                padding: 1px;
+            }
+            
+            .container {
+                max-width: calc(100vw - 2px);
+                border-radius: 4px;
+            }
+            
+            .content {
+                padding: 8px;
+            }
+            
+            .header {
+                padding: 8px;
+            }
+            
+            .header h1 {
+                font-size: 15px;
+            }
+            
+            .header p {
+                font-size: 10px;
+            }
+            
+            .question {
+                font-size: 13px;
+            }
+            
+            .option {
+                padding: 6px 8px;
+                font-size: 11px;
+                min-height: 36px;
+            }
+            
             .options {
-                gap: 6px;
+                gap: 4px;
             }
         }
     </style>
