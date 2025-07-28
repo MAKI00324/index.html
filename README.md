@@ -15,70 +15,74 @@
             font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'Meiryo', sans-serif;
             background: linear-gradient(135deg, #ff9a56 0%, #ff6b35 50%, #f7931e 100%);
             min-height: 100vh;
-            padding: 10px;
+            padding: 8px;
             line-height: 1.6;
+            margin: 0;
         }
         
         .container {
-            max-width: 500px;
+            max-width: 450px;
             margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             overflow: hidden;
         }
         
         .header {
             background: linear-gradient(135deg, #ff9a56, #ff6b35);
             color: white;
-            padding: 20px;
+            padding: 16px;
             text-align: center;
         }
         
         .header h1 {
-            font-size: clamp(18px, 5vw, 24px);
-            margin-bottom: 8px;
+            font-size: clamp(17px, 4.5vw, 22px);
+            margin-bottom: 6px;
             font-weight: 700;
         }
         
         .header p {
-            font-size: clamp(12px, 3.5vw, 14px);
+            font-size: clamp(11px, 3vw, 13px);
             opacity: 0.95;
         }
         
         .content {
-            padding: 20px;
+            padding: 16px;
         }
         
         .question-container {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .question {
-            font-size: clamp(16px, 4vw, 18px);
+            font-size: clamp(15px, 4vw, 17px);
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #333;
-            line-height: 1.5;
+            line-height: 1.4;
         }
         
         .options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
         
         .option {
-            padding: 15px;
+            padding: 12px 14px;
             border: 2px solid #e8e8e8;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s ease;
             background: #fafafa;
-            font-size: clamp(14px, 3.5vw, 16px);
-            line-height: 1.4;
+            font-size: clamp(13px, 3.5vw, 15px);
+            line-height: 1.3;
             word-break: keep-all;
             overflow-wrap: break-word;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
         }
         
         .option:hover {
@@ -213,9 +217,9 @@
         }
         
         .illustration {
-            width: 100px;
-            height: 100px;
-            margin: 15px auto;
+            width: 80px;
+            height: 80px;
+            margin: 12px auto;
             position: relative;
         }
         
@@ -228,7 +232,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 35px;
+            font-size: 28px;
         }
         
         .metabolic-icon {
@@ -289,28 +293,114 @@
         /* スマホ対応の追加調整 */
         @media (max-width: 480px) {
             body {
-                padding: 5px;
+                padding: 4px;
             }
             
             .container {
-                border-radius: 12px;
+                border-radius: 10px;
+                max-width: 100%;
+                margin: 0;
             }
             
             .content {
-                padding: 15px;
-            }
-            
-            .option {
                 padding: 12px;
             }
             
+            .header {
+                padding: 12px;
+            }
+            
+            .option {
+                padding: 10px 12px;
+                font-size: 14px;
+                min-height: 44px;
+            }
+            
+            .question {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+            
             .illustration {
-                width: 80px;
-                height: 80px;
+                width: 70px;
+                height: 70px;
+                margin: 10px auto;
             }
             
             .metabolic-icon, .water-icon, .appetite-icon, .sleep-icon, .hormone-icon {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            
+            .result-type {
+                font-size: 20px;
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+            
+            .habits-list {
+                margin: 15px 0;
+            }
+            
+            .habits-list h3 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            
+            .habits-list li {
+                padding: 8px 0;
+                font-size: 13px;
+            }
+            
+            .exercise-box {
+                padding: 12px;
+                font-size: 13px;
+            }
+            
+            .advice-box {
+                padding: 12px;
+                font-size: 13px;
+                margin-top: 15px;
+            }
+        }
+        
+        /* 極小画面対応 */
+        @media (max-width: 360px) {
+            body {
+                padding: 2px;
+            }
+            
+            .container {
+                border-radius: 8px;
+            }
+            
+            .content {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 16px;
+            }
+            
+            .header p {
+                font-size: 11px;
+            }
+            
+            .question {
+                font-size: 14px;
+            }
+            
+            .option {
+                padding: 8px 10px;
+                font-size: 13px;
+                min-height: 40px;
+            }
+            
+            .options {
+                gap: 6px;
             }
         }
     </style>
